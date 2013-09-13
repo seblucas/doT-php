@@ -6,7 +6,23 @@ PHP rendering engine for [doT.js (The fastest + concise javascript template engi
 How to use it
 -------------
 
-Todo
+    // Load the library
+    require_once ("resources/doT-php/doT.php");
+  
+    // Load the template
+    $page = file_get_contents('templates/page.html');
+  
+    // instanciate the object
+    $template = new doT ();
+  
+    // Compile your templace in a PHP function ($dot)
+    $dot = $template->template ($page);
+  
+    // the data is simple PHP array
+    $data = array ("title" => "My custom title");
+  
+    // Write the HTML
+    echo $dot ($data);
 
 Warning
 -------

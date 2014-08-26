@@ -40,7 +40,8 @@ class doT {
 
     public function template ($string, $def) {
         $me = $this;
-        $func = preg_replace ("/'|\\\/", "\\$&", $string);
+
+        $func = $string;
 
         // deps
         if (empty ($def)) {
@@ -49,6 +50,9 @@ class doT {
             $this->def = $def;
             $func = $this->resolveDefs ($func);
         }
+
+        $func = preg_replace ("/'|\\\/", "\\$&", $func);
+
         // interpolate
         $func = preg_replace_callback ("/\{\{=([\s\S]+?)\}\}/", function ($m) use ($me) {
             return "' . " . $me->handleDotNotation ($m[1]) . " . '";

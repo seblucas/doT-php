@@ -1,5 +1,5 @@
 {
-    "name": "seblucas/doT-php",
+    "name": "seblucas/dot-php",
     "type": "library",
     "description": "PHP rendering engine for doT.js (The fastest + concise javascript template engine for nodejs and browsers)",
     "keywords": ["doT", "template", "engine", "rendering"],

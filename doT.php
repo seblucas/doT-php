@@ -91,7 +91,7 @@ class doT {
 
         $this->functionBody = $func;
 
-        return create_function ('$it', $func);
+        return @create_function ('$it', $func);
     }
 
     public function execute ($data) {

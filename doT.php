@@ -9,7 +9,6 @@
 
 class doT {
     public $functionBody;
-    private $functionCode;
     public $def;
     public $argName = '$it';
 
@@ -96,9 +95,4 @@ class doT {
             return eval($func);
         };');
     }
-
-    public function execute ($data) {
-        return $this->functionCode ($data);
-    }
-
 }

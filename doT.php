@@ -39,7 +39,7 @@ class doT {
         return $out;
     }
 
-    public function template ($string, $def) {
+    public function template ($string, $def = NULL) {
         $me = $this;
 
         $func = $string;

@@ -11,6 +11,7 @@ class doT {
     public $functionBody;
     private $functionCode;
     public $def;
+    public $argName = '$it';
 
     public function resolveDefs ($block) {
         $me = $this;
@@ -91,7 +92,9 @@ class doT {
 
         $this->functionBody = $func;
 
-        return @create_function ('$it', $func);
+        return eval('return function (' . $this->argName . ') use ($func) {
+            return eval($func);
+        };');
     }
 
     public function execute ($data) {

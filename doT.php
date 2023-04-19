@@ -51,7 +51,7 @@ class doT {
             $func = $this->resolveDefs ($func);
         }
 
-        $func = preg_replace ("/'|\\\/u", "\\$&", $func);
+        $func = preg_replace ("/'|\\\/u", "\\\\$0", $func);
 
         // interpolate
         $func = preg_replace_callback ("/\{\{=([\s\S]+?)\}\}/u", function ($m) use ($me) {
